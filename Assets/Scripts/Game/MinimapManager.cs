@@ -8,46 +8,48 @@ public class MinimapManager : MonoBehaviour
     public float Duration;
 
     private List<GameObject> markerList;
-    private bool isActive;
 
     // Start is called before the first frame update
     void Start()
     {
         markerList = new List<GameObject>();
+        StartCoroutine(CoroutineActivateMinimap());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isActive)
-        {
-            StartCoroutine(CoroutineUpdateMinimap());
-            isActive = true;
-        }
+        
     }
 
     private IEnumerator CoroutineUpdateMinimap()
     {
-        StartCoroutine(CoroutineActivateMinimap());
-
         yield return new WaitForSeconds(Duration);
 
-        isActive = false;
+        StartCoroutine(CoroutineActivateMinimap());
     }
 
     private IEnumerator CoroutineActivateMinimap()
     {
         foreach(GameObject obj in markerList)
         {
-            obj.SetActive(true);
+            if(obj != null)
+            {
+                obj.SetActive(true);
+            }
         }
 
         yield return new WaitForSeconds(VisibleDuration);
 
         foreach (GameObject obj in markerList)
         {
-            obj.SetActive(false);
+            if(obj != null)
+            {
+                obj.SetActive(false);
+            }
         }
+
+        StartCoroutine(CoroutineUpdateMinimap());
     }
 
     public void AddMarkerToList(GameObject obj)
@@ -55,7 +57,7 @@ public class MinimapManager : MonoBehaviour
         markerList.Add(obj);
     }
 
-    public void RemoveMarkerToList(GameObject obj)
+    public void RemoveMarkerFromList(GameObject obj)
     {
         markerList.Remove(obj);
     }

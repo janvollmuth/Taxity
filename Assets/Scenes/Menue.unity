@@ -4629,7 +4629,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 91dc45bd1478ceb48868efaf63a2f5b5, type: 3}
-    m_FontSize: 30
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -4640,11 +4640,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Your goal is to collect 5 customers before the other player can do the
-    same.\r\nOnly some NPCs are customers. You can identify them through the way
-    they are dressed: They're wearing blue jeans and a red hat. They're also marked
-    on the minimap with grey circles. \r\n\nHeads up: You can steal customers from
-    your opponent by ramming them! "
+  m_Text: 'Your goal is to collect 5 customers before the other player can do the
+    same.
+
+    Only some NPCs are customers. You can identify them through the way
+    they are dressed: They''re wearing blue jeans and a red hat. They''re also marked
+    on the minimap with grey circles and periodically appear on the Minimap for a
+    few seconds.
+
+
+    Heads up: You can steal customers from your opponent by ramming
+    them! '
 --- !u!222 &857365918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5149,7 +5155,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 91dc45bd1478ceb48868efaf63a2f5b5, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5164,11 +5170,13 @@ MonoBehaviour:
     same.
 
     Customers are very hard to spot. The only way to identify them is
-    through the way they move. Watch out for special movement patterns to find them!
+    through the way they move and the markers on the minimap. Watch out for special
+    movement patterns to find them! The markers also periodically appear on the Minimap
+    for a few seconds.
 
 
-    Heads
-    up: You can steal customers from your opponent by ramming them!'
+    Heads up: You can steal customers from your opponent
+    by ramming them!'
 --- !u!222 &1014413991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7040,7 +7048,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 91dc45bd1478ceb48868efaf63a2f5b5, type: 3}
-    m_FontSize: 30
+    m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -7055,11 +7063,11 @@ MonoBehaviour:
     same.
 
     Every NPC is a customer. They''re marked on the minimap with grey
-    circles.
+    circles. They also periodically appear on the Minimap for a few seconds.
 
 
-    Heads up: You can steal customers from your opponent by ramming
-    them! '
+    Heads
+    up: You can steal customers from your opponent by ramming them! '
 --- !u!222 &1294045798
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public InGameAudioHandler AudioHandler;
     public Camera cam;
     public NavMeshAgent agent;
+    public GameObject minimap;
     private GameObject human;
     private bool npcAround;
     private Animator animator;
@@ -139,7 +140,7 @@ public class PlayerController : MonoBehaviour
             GameObject entry = other.gameObject;
             string dir = direction.Direction[direction.listIndex];
             NextWaypoint = entry.GetComponent<WayPointManager_v2>().GetSelectedCrossingOption(dir, animator);
-            direction.listIndex = 0;
+            //direction.listIndex = 0;
         }
 
         if (other.name.Contains("Human") && other.gameObject.name != null)
@@ -271,6 +272,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space) && npcAround)
         {
             animator.SetTrigger("Stop");
+            minimap.GetComponent<MinimapManager>().RemoveMarkerFromList(human);
             human.GetComponentInParent<HumanAI>().DeactivateHuman(1);
             GameManager.Instance.Player1Stopped = true;
             AudioHandler.PlayPickUpSound();
@@ -304,6 +306,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.RightControl) && npcAround)
         {
             animator.SetTrigger("Stop");
+            minimap.GetComponent<MinimapManager>().RemoveMarkerFromList(human);
             human.GetComponentInParent<HumanAI>().DeactivateHuman(2);
             GameManager.Instance.Player2Stopped = true;
             AudioHandler.PlayPickUpSound();
